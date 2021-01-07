@@ -9,6 +9,10 @@ const App = (state) => {
         </li>
       </ul>
     </header>
-    <main></main>
+    <main>
+      <h1>${state.title}</h1>
+    </main>
   `;
 };
+
+export { App };

@@ -1,10 +1,23 @@
 import "./css/main.css";
 import getRover from "./js/fetchData";
+import App from "./js/userInterfaces";
 
-let initalState = {
+/*Initial state*/
+let state = {
+  title: "Welcome to Mars Rovers Udacity",
   rovers: ["Curiosity", "Opportunity", "Spirit"],
 };
-const $root = document.querySelector("#root");
-const $button = document.querySelector("#button");
+const root = document.querySelector("#root");
+/* Updating the state */
+const updateState = (state, newState) => {
+  state = Object.assign(state, newState);
+  render(root, state);
+};
 
-$button.addEventListener("click", getRover);
+const render = async (root, state) => {
+  root.innerHTML = App(state);
+};
+
+window.addEventListener("load", () => {
+  render(root, state);
+});
