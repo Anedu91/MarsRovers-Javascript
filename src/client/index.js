@@ -1,6 +1,6 @@
 import "./css/main.css";
-import getRover from "./js/fetchData";
-import App from "./js/userInterfaces";
+import { getRover, getApod } from "./js/fetchData";
+import { App } from "./js/userInterfaces";
 
 /*Initial state*/
 let state = {
@@ -18,6 +18,9 @@ const render = async (root, state) => {
   root.innerHTML = App(state);
 };
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   render(root, state);
+  const newData = await getApod();
+  await updateState(state, newData);
+  console.log(state);
 });

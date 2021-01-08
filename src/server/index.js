@@ -27,6 +27,24 @@ function listening() {
 }
 
 /* Routes */
+const fetchApod = async (req, res) => {
+  const API_KEY = process.env.API_KEY;
+  const RANDOM_APOD = 1;
+  const URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=${RANDOM_APOD}`;
+
+  const getApod = await fetch(URL);
+  try {
+    const data = await getApod.json();
+    const objectData = {
+      picOfTheDay: data[0],
+    };
+    res.send(objectData);
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+app.get("/apod", fetchApod);
+
 const fetchRover = async (req, res) => {
   const rover = req.params.rover;
   const API_KEY = process.env.API_KEY;
@@ -40,4 +58,4 @@ const fetchRover = async (req, res) => {
     console.log("error", error);
   }
 };
-app.get(`/:rover`, fetchRover);
+app.get(`/rover/:rover`, fetchRover);
