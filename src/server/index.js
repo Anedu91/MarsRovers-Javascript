@@ -36,7 +36,7 @@ const fetchApod = async (req, res) => {
   try {
     const data = await getApod.json();
     const objectData = {
-      picOfTheDay: data[0],
+      home: data[0],
     };
     res.send(objectData);
   } catch (error) {
