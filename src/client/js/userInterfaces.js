@@ -12,7 +12,7 @@ const App = (state) => {
       </ul>
     </header>
     <main class="relative pt-5">
-      <h1 class="text-6xl text-center">${state.title}</h1>
+      <h1 class="text-6xl text-center">${state.get("title")}</h1>
       <section class="mt-5">
         <div class="flex justify-center space-x-3">
         ${creatingRovers(rovers)}
