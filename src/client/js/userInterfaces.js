@@ -15,7 +15,7 @@ const App = (state) => {
       <h1 class="text-6xl text-center">${state.get("title")}</h1>
       <section class="mt-5">
         <div class="flex justify-center space-x-3">
-        ${creatingRovers(rovers)}
+        ${creatingRovers(rovers).join("")}
         </div>
       </section>
       <section class="mt-5 px-10" id="main">
@@ -65,15 +65,23 @@ const displayingRover = (rover) => {
 
   return `
       <div class="mb-5">
-        <h2 class="text-center font-bold text-xl">${rover.photos[0].rover.name} Information</h2>
+        <h2 class="text-center font-bold text-xl">${
+          rover.photos[0].rover.name
+        } Information</h2>
         <ul class="text-center">
-          <li>Launch Date: <span class="font-bold">${rover.photos[0].rover.launch_date}</span> </li>
-          <li>Landing Date: <span class="font-bold">${rover.photos[0].rover.landing_date}</span> </li>
-          <li>Status: <span class="font-bold text-green-600"> ${rover.photos[0].rover.status}</span></li>
+          <li>Launch Date: <span class="font-bold">${
+            rover.photos[0].rover.launch_date
+          }</span> </li>
+          <li>Landing Date: <span class="font-bold">${
+            rover.photos[0].rover.landing_date
+          }</span> </li>
+          <li>Status: <span class="font-bold text-green-600"> ${
+            rover.photos[0].rover.status
+          }</span></li>
         </ul>        
       </div>
       <div class="grid grid-cols-3 gap-5">
-        ${imageCard}
+        ${imageCard.join("")}
       </div>`;
 };
 
