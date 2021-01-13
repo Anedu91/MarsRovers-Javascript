@@ -11,8 +11,8 @@ const App = (state) => {
         </li>
       </ul>
     </header>
-    <main class="relative pt-5">
-      <h1 class="text-6xl text-center">${state.get("title")}</h1>
+    <main class="relative pt-5 px-3">
+      <h1 class="text-2xl md:text-6xl text-center">${state.get("title")}</h1>
       <section class="mt-5">
         <div class="flex justify-center space-x-3">
         ${creatingRovers(rovers).join("")}
@@ -80,7 +80,7 @@ const displayingRover = (rover) => {
           }</span></li>
         </ul>        
       </div>
-      <div class="grid grid-cols-3 gap-5">
+      <div class="grid md:grid-cols-3 gap-5">
         ${imageCard.join("")}
       </div>`;
 };
