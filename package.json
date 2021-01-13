@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server": "node src/server/index",
+    "start": "node src/server/index",
     "build-dev": "webpack --config webpack.dev.js --watch",
     "build-server": "webpack-cli serve --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js"

@@ -21,7 +21,7 @@ The project was made under the requirements in [rubrics]
 
 npm install => to download the packages
 
-npm run start-server => Inizialitaion of the Express server
+npm start => Inizialitaion of the Express server
 
 npm run build-server => To create a webpack dev-server
 
