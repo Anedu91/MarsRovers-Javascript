@@ -29,4 +29,12 @@ npm run build-dev => To create a dist folder in development mode
 
 npm run build-prod => To create a dist folder in production mode
 
+## Instructions
+
+1-. Create the dist folder in production mode
+
+2-. Inicializite the Express server
+
+3-. Open the localhost port (8000)
+
 [rubrics]: https://review.udacity.com/#!/rubrics/2708/view
